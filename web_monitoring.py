@@ -8,7 +8,7 @@ def main():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style> .font {
             font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;}
-            </style> """, unsafe_allow_html=True)
+            </style> """, unsafe_allow_html=False)
 
     st.markdown('<p class="font">Monitoring Web App</p>', unsafe_allow_html=True)
 
@@ -16,7 +16,7 @@ def main():
     <style>
     div.stButton > button:first-child {width:80pt
     }
-    </style>""", unsafe_allow_html=True)
+    </style>""", unsafe_allow_html=False)
 
 
     myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
@@ -27,7 +27,6 @@ def main():
     input = st.text_input("Set Point Baru")
     try:
         myDB.put('Data',"Data_new_set_point", int(input))
-        time.sleep(3)
         input = -1
         myDB.put('Data',"Data_new_set_point", int(input))
     except:
