@@ -13,8 +13,7 @@ def main():
 
     st.markdown("""
     <style>
-    div.stButton > button:first-child {
-        background-color: rgb(0, 0, 0); width:80pt
+    div.stButton > button:first-child {width:80pt
     }
     </style>""", unsafe_allow_html=True)
 
