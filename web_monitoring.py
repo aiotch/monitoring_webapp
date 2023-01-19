@@ -46,6 +46,8 @@ def main():
         if (st.button("OFF")):
             try:
                 myDB.put('Data', "Data_ON_OFF", 0)
+            except:
+                myDB.put('Data', "Data_ON_OFF", 1)
         else:
             pass
 
