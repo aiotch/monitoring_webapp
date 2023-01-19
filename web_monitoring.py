@@ -23,7 +23,7 @@ def main():
    
     placeholder0.empty()
     
-        input = st.text_input("Set Point Baru")
+    input = st.text_input("Set Point Baru")
     try:
         myDB.put('Data',"Data_new_set_point", int(input))
         myDB.put('Data',"triger", int(1))
