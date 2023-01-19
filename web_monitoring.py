@@ -27,6 +27,7 @@ def main():
     input = st.text_input("Set Point Baru")
     try:
         myDB.put('Data',"Data_new_set_point", int(input))
+        time.sleep(5)
         input = -1
         myDB.put('Data',"Data_new_set_point", int(input))
     except:
