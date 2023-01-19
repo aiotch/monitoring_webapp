@@ -38,7 +38,7 @@ def main():
             try:
                 myDB.put('Data', "Data_ON_OFF", 1)
             except:
-                pass
+                myDB.put('Data', "Data_ON_OFF", 0)
         else:
             pass
 
@@ -48,7 +48,7 @@ def main():
             try:
                 myDB.put('Data', "Data_ON_OFF", 0)
             except:
-                pass
+                myDB.put('Data', "Data_ON_OFF", 1)
         else:
             pass
 
