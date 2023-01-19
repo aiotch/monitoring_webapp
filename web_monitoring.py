@@ -21,7 +21,7 @@ def main():
 
     myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
    
-    placeholder0.empty()
+    placeholder0 = st.empty()
     
     input = st.text_input("Set Point Baru")
     try:
@@ -46,14 +46,14 @@ def main():
         if (st.button("OFF")):
             try:
                 myDB.put('Data', "Data_ON_OFF", 0)
-            except:
-                myDB.put('Data', "Data_ON_OFF", 1)
         else:
             pass
 
     col4, col5, col6 = st.columns([0.33, 0.33, 0.33])
     with col4:
-        placeholder1 = st.empty()
+        
+            except:
+                myDB.put('Data', "Data_ON_OFF", 1)placeholder1 = st.empty()
     with col5:
         placeholder2 = st.empty()
     with col6:
