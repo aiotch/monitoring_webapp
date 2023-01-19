@@ -8,7 +8,7 @@ def main():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style> .font {
             font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;}
-            </style> """, unsafe_allow_html=False)
+            </style> """, unsafe_allow_html=True)
 
     st.markdown('<p class="font">Monitoring Web App</p>', unsafe_allow_html=True)
 
@@ -16,7 +16,7 @@ def main():
     <style>
     div.stButton > button:first-child {width:80pt
     }
-    </style>""", unsafe_allow_html=False)
+    </style>""", unsafe_allow_html=True)
 
 
     myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
