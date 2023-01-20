@@ -110,14 +110,14 @@ def run():
                 ax3.spines['right'].set_visible(False)
                 ax3.spines['bottom'].set_visible(False)
                 ax3.spines['left'].set_visible(False)
-
+                
+                fig.patch.set_alpha(0)
                 st.pyplot(fig)
                 plt.close(fig)
 
 def main():
     with container_login.container():
         st.title("Login Web App")
-        st.subheader("Login Section")
         username = st.text_input("User Name")
         password = st.text_input("Password",type='password')
         if st.button("Login"):
