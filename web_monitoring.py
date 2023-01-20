@@ -108,7 +108,6 @@ def run():
             ax3.spines['left'].set_visible(False)
 
             st.pyplot(fig)
-main()
 
 def main():
     st.set_page_config(page_title="Moniotring", layout="wide")
@@ -124,4 +123,5 @@ def main():
                 run()
             else:
                 st.warning("Incorrect Username/Password")
-				
+
+main()
