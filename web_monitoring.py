@@ -67,7 +67,7 @@ def run():
 
                 x_valve = (1)
                 y_valve = get_Data_Open_Valve
-                #ax1.bar(x_valve, 100.2, alpha = 1, color = 'white', edgecolor = "black")
+                ax1.bar(x_valve, 100.2, alpha = 1, color = 'white', edgecolor = "black")
                 ax1.bar(x_valve, y_valve, color = 'green', edgecolor = "black")
                 if y_valve >= 95:
                     ax1.annotate(y_valve, (1, y_valve - 5), ha='center')
