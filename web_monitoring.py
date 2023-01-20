@@ -17,7 +17,7 @@ def main():
 				st.warning("Incorrect Username/Password")
 				
 				
-def run() 
+def run():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style> .font {
             font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;}
