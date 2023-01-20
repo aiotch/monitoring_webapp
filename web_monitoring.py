@@ -47,7 +47,6 @@ def run():
         placeholder = st.empty()
         
         while True:
-            time.sleep(0.5)
             with placeholder0.container():
                 get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
                 st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
@@ -113,6 +112,7 @@ def run():
                 ax3.spines['left'].set_visible(False)
 
                 st.pyplot(fig)
+                st.close(fig)
 
 def main():
     with container_login.container():
