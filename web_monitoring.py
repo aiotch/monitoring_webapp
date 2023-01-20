@@ -49,7 +49,9 @@ def main():
             pass
     
     placeholder = st.empty()
-    while True:
+    a = 1
+    while a < 2:
+        a +=1
         with placeholder0.container():
             get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
             st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
