@@ -2,9 +2,9 @@ import streamlit as st
 from firebase import firebase
 from matplotlib import pyplot as plt
 
-								
+
+				
 def run():
-    st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style>.font {font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} </style> """, unsafe_allow_html=True)
     
     st.markdown('<p class="font">Monitoring Web App</p>', unsafe_allow_html=True)
@@ -108,8 +108,10 @@ def run():
             ax3.spines['left'].set_visible(False)
 
             st.pyplot(fig)
-		
+main()
+
 def main():
+    st.set_page_config(page_title="Moniotring", layout="wide")
     container_login = st.empty()
     with container_login.container():
         st.title("Login Web App")
@@ -122,6 +124,4 @@ def main():
                 run()
             else:
                 st.warning("Incorrect Username/Password")
-		
-main()
-
+				
