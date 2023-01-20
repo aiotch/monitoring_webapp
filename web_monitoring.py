@@ -3,18 +3,18 @@ from firebase import firebase
 from matplotlib import pyplot as plt
 
 def main():
-	container_login = st.empty()
-	with container_login.container():
-		st.title("Login Web App")
-		st.subheader("Login Section")
-		username = st.text_input("User Name")
-		password = st.text_input("Password",type='password')
-		if st.button("Login"):
-			if username == 'admin' and password == '12345678':
-				container_login.empty()
-                 		run()
-			else:
-				st.warning("Incorrect Username/Password")
+    container_login = st.empty()
+    with container_login.container():
+	st.title("Login Web App")
+	st.subheader("Login Section")
+	username = st.text_input("User Name")
+	password = st.text_input("Password",type='password')
+	if st.button("Login"):
+	    if username == 'admin' and password == '12345678':
+		container_login.empty()
+                run()
+	    else:
+		st.warning("Incorrect Username/Password")
 				
 				
 def run():
@@ -37,7 +37,7 @@ def run():
     
     input = st.text_input("Set Point Baru")
     try:
-        myDB.put('Data',"Data_new_set_point", int(input))
+		myDB.put('Data',"Data_new_set_point", int(input))
         myDB.put('Data',"triger", int(1))
     except:
         pass
