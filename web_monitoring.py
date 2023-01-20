@@ -15,10 +15,9 @@ def run():
         myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
         placeholder0 = st.empty()
         
-        get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-        input = get_Data_set_point_now
-        
         input = st.text_input("Set Point Baru")
+        get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
+        input = get_Data_set_point_now 
         
         get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
         st.write("Set Point Sekarang: " + str(input))
