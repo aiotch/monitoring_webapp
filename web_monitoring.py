@@ -16,17 +16,17 @@ def run():
         placeholder0 = st.empty()
         
         input = st.text_input("Set Point Baru")
-        get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-        input = get_Data_set_point_now 
         
-        get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-        st.write("Set Point Sekarang: " + str(input))
-        
-        try:
+        if input:
+            #get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
+            with placeholder0.container():   
+                st.write("Set Point Sekarang: " + str(input))
+            
             myDB.put('Data',"Data_new_set_point", int(input))
             myDB.put('Data',"triger", int(1))
-        except:
-            pass
+
+        st.write("Set Point Sekarang: " + str(input))
+        
         
         col2, col3, col4 = st.columns([0.1, 0.1, 0.8])
 
@@ -55,10 +55,6 @@ def run():
         placeholder = st.empty()
         
         while True:
-            with placeholder0.container():
-                #get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-                st.write("Set Point Sekarang: " + str(input))
-
             placeholder.empty()
             with placeholder.container():
                 get_Data_Open_Valve = myDB.get('Data/Data_Open_Valve', None)
