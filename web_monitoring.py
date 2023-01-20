@@ -1,8 +1,6 @@
 import streamlit as st
 from firebase import firebase
-import plotly.graph_objs as go
-import matplotlib.pyplot as plt
-import time
+from matplotlib import pyplot as plt
 
 def main():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
