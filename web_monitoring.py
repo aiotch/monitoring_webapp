@@ -17,7 +17,6 @@ def run():
         
         input = st.text_input("Set Point Baru")
         
-        placeholder0.empty()
         with placeholder0.container():  
             get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)          
             st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
@@ -30,8 +29,6 @@ def run():
             myDB.put('Data',"Data_new_set_point", int(input))
             myDB.put('Data',"triger", int(1))
 
-        st.write("Set Point Sekarang: " + str(input))
-        
         
         col2, col3, col4 = st.columns([0.1, 0.1, 0.8])
 
