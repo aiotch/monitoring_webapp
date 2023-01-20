@@ -20,21 +20,19 @@ def main():
 def run():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style>.font {font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} </style> """, unsafe_allow_html=True)
-
+    
     st.markdown('<p class="font">Monitoring Web App</p>', unsafe_allow_html=True)
-
     st.markdown(""" <style> div.stButton > button:first-child {width:60pt}</style>""", unsafe_allow_html=True)
-
     myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
-   
     placeholder0 = st.empty()
     
     input = st.text_input("Set Point Baru")
     try:
-		myDB.put('Data',"Data_new_set_point", int(input))
+        myDB.put('Data',"Data_new_set_point", int(input))
         myDB.put('Data',"triger", int(1))
     except:
         pass
+    
     col2, col3, col4 = st.columns([0.1, 0.1, 0.8])
 
     with col2:
