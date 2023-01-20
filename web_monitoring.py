@@ -12,7 +12,7 @@ def main():
 
     st.markdown("""
     <style>
-    div.stButton > button:first-child {width:80pt
+    div.stButton > button:first-child {width:40pt
     }
     </style>""", unsafe_allow_html=True)
 
@@ -26,7 +26,7 @@ def main():
         myDB.put('Data',"triger", int(1))
     except:
         pass
-    col2, col3, col4 = st.columns([0.03, 0.03, 0.94])
+    col2, col3, col4 = st.columns([0.1, 0.1, 0.8])
 
     with col2:
         # st.markdown("#")
