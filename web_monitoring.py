@@ -1,7 +1,7 @@
 import streamlit as st
 from firebase import firebase
 import plotly.graph_objs as go
-from plotly.subplots import make_subplots
+import matplotlib.pyplot as plt
 import time
 
 def main():
@@ -50,14 +50,7 @@ def main():
                 myDB.put('Data', "Data_ON_OFF", 1)
         else:
             pass
-
-    col4, col5, col6 = st.columns([0.33, 0.33, 0.33])
-    with col4:
-        placeholder1 = st.empty()
-    with col5:
-        placeholder2 = st.empty()
-    with col6:
-        placeholder3 = st.empty()
+    
 
     while True:
         with placeholder0.container():
@@ -65,55 +58,62 @@ def main():
             st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
         
         get_Data_Open_Valve = myDB.get('Data/Data_Open_Valve', None)
-        with col4:
-            placeholder1.empty()
-            with placeholder1.container():
-                open_value = go.Indicator(mode="gauge+number", value=get_Data_Open_Valve,
-                                          gauge={'axis': {'range': [None, 100]}},
-                                          domain={'row': 1, 'column': 1}, delta={'reference': 100},
-                                          title={'text': "Open Valve"})
-
-                fig_1= make_subplots(
-                    rows=1,
-                    cols=1,
-                    specs=[[{'type' : 'indicator'}]],
-                    )
-
-                fig_1.append_trace(open_value, row=1, col=1)
-                st.plotly_chart(fig_1, use_container_width=True)
-
         get_Data_Flow = myDB.get('Data/Data_Flow', None)
-        with col5:
-            placeholder2.empty()
-            with placeholder2.container():
-                flow = go.Indicator(mode="gauge+number", value=get_Data_Flow,
-                                    gauge={'axis': {'range': [None, 100]}},
-                                    domain={'row': 1, 'column': 1}, delta={'reference': 100}, title={'text': "Flow"})
-
-                fig_2 = make_subplots(
-                    rows=1,
-                    cols=1,
-                    specs=[[{'type' : 'indicator'}]],
-                    )
-
-                fig_2.append_trace(flow, row=1, col=1)
-                st.plotly_chart(fig_2, use_container_width=True)
-
         get_Data_Pressure = myDB.get('Data/Data_Pressure', None)
-        with col6:
-            placeholder3.empty()
-            with placeholder3.container():
-                pressure = go.Indicator(mode="gauge+number", value=get_Data_Pressure,
-                                            gauge={'axis': {'range': [None, 100]}},
-                                            domain={'row': 1, 'column': 1}, delta={'reference': 100}, title={'text': "Pressure"})
+        
+        fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3)
 
-                fig_3 = make_subplots(
-                    rows=1,
-                    cols=1,
-                    specs=[[{'type' : 'indicator'}]],
-                    )
+        x_valve = (1)
+        y_valve = get_Data_Open_Valve
+        ax1.bar(x_valve, 100.2, alpha = 1, color = 'white', edgecolor = "black")
+        ax1.bar(x_valve, y_valve, color = 'green', edgecolor = "black")
+        if y_velve >= 95:
+            ax1.annotate(y_valve, (1, y_valve - 5), ha='center')
+        else:
+            ax1.annotate(y_valve, (1, y_valve + 2), ha='center')
 
-                fig_3.append_trace(pressure, row=1, col=1)
-                st.plotly_chart(fig_3, use_container_width=True)
 
+        ax1.set_ylim([0, 100.2])
+        ax1.xaxis.set_visible(False)
+        ax1.yaxis.set_visible(False)
+        ax1.spines['top'].set_visible(False)
+        ax1.spines['right'].set_visible(False)
+        ax1.spines['bottom'].set_visible(False)
+        ax1.spines['left'].set_visible(False)
+
+        x_flow = (2)
+        y_flow = get_Data_Flow
+        ax2.bar(x_flow, 100.2, alpha = 1, color = 'white', edgecolor = "black")
+        ax2.bar(x_flow, y_flow, color = 'green', edgecolor = "black")
+        if y_flow >= 95:
+            ax2.annotate(y_flow, (2, y_flow - 5), ha='center')
+        else:
+            ax2.annotate(y_flow, (2, y_flow + 2), ha='center')
+
+        ax2.set_ylim([0, 100.2])
+        ax2.xaxis.set_visible(False)
+        ax2.yaxis.set_visible(False)
+        ax2.spines['top'].set_visible(False)
+        ax2.spines['right'].set_visible(False)
+        ax2.spines['bottom'].set_visible(False)
+        ax2.spines['left'].set_visible(False)
+
+        x_pressure = (3)
+        y_pressure = get_Data_Pressure
+        ax3.bar(x_pressure, 100.2, alpha = 1, color = 'white', edgecolor = "black")
+        ax3.bar(x_pressure, y_pressure, color = 'green', edgecolor = "black")
+        if y_pressure >= 95:
+            ax3.annotate(y_pressure, (3, y_pressure - 5), ha='center')
+        else:
+            ax3.annotate(y_pressure, (3, y_pressure + 2), ha='center')
+
+        ax3.set_ylim([0, 100.2])
+        ax3.xaxis.set_visible(False)
+        ax3.yaxis.set_visible(False)
+        ax3.spines['top'].set_visible(False)
+        ax3.spines['right'].set_visible(False)
+        ax3.spines['bottom'].set_visible(False)
+        ax3.spines['left'].set_visible(False)
+
+        st.plotly_chart(fig_1, use_container_width=True)
 main()
