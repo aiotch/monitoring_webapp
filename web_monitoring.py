@@ -30,7 +30,8 @@ def run():
                 try:
                     myDB.put('Data', "Data_ON_OFF", 1)
                 except:
-                    myDB.put('Data', "Data_ON_OFF", 0)
+                    #myDB.put('Data', "Data_ON_OFF", 0)
+                    pass
             else:
                 pass
 
@@ -40,7 +41,8 @@ def run():
                 try:
                     myDB.put('Data', "Data_ON_OFF", 0)
                 except:
-                    myDB.put('Data', "Data_ON_OFF", 1)
+                    #myDB.put('Data', "Data_ON_OFF", 1)
+                    pass
             else:
                 pass
         
@@ -48,8 +50,8 @@ def run():
         
         while True:
             with placeholder0.container():
-                get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-                st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
+                #get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
+                st.write("Set Point Sekarang: " + str(input))
 
             placeholder.empty()
             with placeholder.container():
@@ -67,7 +69,6 @@ def run():
                     ax1.annotate(y_valve, (1, y_valve - 5), ha='center')
                 else:
                     ax1.annotate(y_valve, (1, y_valve + 2), ha='center')
-
 
                 ax1.set_ylim([0, 100.2])
                 ax1.xaxis.set_visible(False)
@@ -118,6 +119,7 @@ def run():
 def main():
     with container_login.container():
         st.title("Login Web App")
+        st.subheader("Login Section")
         username = st.text_input("User Name")
         password = st.text_input("Password",type='password')
         if st.button("Login"):
