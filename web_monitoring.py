@@ -22,6 +22,7 @@ def run():
             st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
                 
         if input: 
+            placeholder0.empty()
             with placeholder0.container():   
                 st.write("Set Point Sekarang: " + str(input))
             
