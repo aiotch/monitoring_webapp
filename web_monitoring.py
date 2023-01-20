@@ -14,11 +14,13 @@ def run():
         st.markdown(""" <style> div.stButton > button:first-child {width:60pt}</style>""", unsafe_allow_html=True)
         myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
         placeholder0 = st.empty()
-        
+        with placeholder0.container():
+            get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
+            st.write("Set Point Sekarang: " + str(get_Data_set_point_now))  
         input = st.text_input("Set Point Baru")
         
         get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
-        st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
+        st.write("Set Point Sekarang: " + str(input))
         
         try:
             myDB.put('Data',"Data_new_set_point", int(input))
