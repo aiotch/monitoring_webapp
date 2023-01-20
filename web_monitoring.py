@@ -16,6 +16,10 @@ def run():
         placeholder0 = st.empty()
         
         input = st.text_input("Set Point Baru")
+        
+        get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
+        st.write("Set Point Sekarang: " + str(input))
+        
         try:
             myDB.put('Data',"Data_new_set_point", int(input))
             myDB.put('Data',"triger", int(1))
