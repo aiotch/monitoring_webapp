@@ -115,5 +115,5 @@ def main():
         ax3.spines['bottom'].set_visible(False)
         ax3.spines['left'].set_visible(False)
 
-        st.plotly_chart(fig_1, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 main()
