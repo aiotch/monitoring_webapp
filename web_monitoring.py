@@ -112,5 +112,5 @@ def main():
         ax3.spines['bottom'].set_visible(False)
         ax3.spines['left'].set_visible(False)
 
-        st.pyplot(fig, use_container_width=True)
+        st.pyplot(fig)
 main()
