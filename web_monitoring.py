@@ -112,6 +112,7 @@ def run():
                 ax3.spines['left'].set_visible(False)
 
                 st.pyplot(fig)
+                plt.close(fig)
 
 def main():
     with container_login.container():
