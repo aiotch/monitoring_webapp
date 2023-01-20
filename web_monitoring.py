@@ -12,7 +12,7 @@ def main():
 
     st.markdown("""
     <style>
-    div.stButton > button:first-child {width:40pt
+    div.stButton > button:first-child {width:60pt
     }
     </style>""", unsafe_allow_html=True)
 
@@ -49,9 +49,7 @@ def main():
             pass
     
     placeholder = st.empty()
-    a = 1
-    while a < 2:
-        a +=1
+    while True:
         with placeholder0.container():
             get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
             st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
