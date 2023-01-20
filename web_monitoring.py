@@ -37,7 +37,7 @@ def run():
     
     input = st.text_input("Set Point Baru")
     try:
-		myDB.put('Data',"Data_new_set_point", int(input))
+	myDB.put('Data',"Data_new_set_point", int(input))
         myDB.put('Data',"triger", int(1))
     except:
         pass
