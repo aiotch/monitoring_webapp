@@ -2,21 +2,7 @@ import streamlit as st
 from firebase import firebase
 from matplotlib import pyplot as plt
 
-def main():
-    container_login = st.empty()
-    with container_login.container():
-        st.title("Login Web App")
-        st.subheader("Login Section")
-        username = st.text_input("User Name")
-        password = st.text_input("Password",type='password')
-        if st.button("Login"):
-            if username == 'admin' and password == '12345678':
-                container_login.empty()
-                run()
-            else:
-                st.warning("Incorrect Username/Password")
-				
-				
+								
 def run():
     st.set_page_config(page_title="Moniotrinng", layout="wide")
     st.markdown(""" <style>.font {font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} </style> """, unsafe_allow_html=True)
@@ -122,4 +108,20 @@ def run():
             ax3.spines['left'].set_visible(False)
 
             st.pyplot(fig)
+		
+def main():
+    container_login = st.empty()
+    with container_login.container():
+        st.title("Login Web App")
+        st.subheader("Login Section")
+        username = st.text_input("User Name")
+        password = st.text_input("Password",type='password')
+        if st.button("Login"):
+            if username == 'admin' and password == '12345678':
+                container_login.empty()
+                run()
+            else:
+                st.warning("Incorrect Username/Password")
+		
 main()
+
