@@ -1,6 +1,7 @@
 import streamlit as st
 from firebase import firebase
 from matplotlib import pyplot as plt
+import time
 
 st.set_page_config(page_title="Moniotring", layout="wide")
 container_login = st.empty()
@@ -44,7 +45,9 @@ def run():
                 pass
         
         placeholder = st.empty()
+        
         while True:
+            time.sleep(0.5)
             with placeholder0.container():
                 get_Data_set_point_now = myDB.get('Data/Data_set_point_now', None)   
                 st.write("Set Point Sekarang: " + str(get_Data_set_point_now))
