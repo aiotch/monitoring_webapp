@@ -26,7 +26,7 @@ def main():
         myDB.put('Data',"triger", int(1))
     except:
         pass
-    col2, col3, col4 = st.columns([0.1, 0.1, 0,8])
+    col2, col3, col4 = st.columns([0.1, 0.1, 0.8])
 
     with col2:
         # st.markdown("#")
