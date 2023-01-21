@@ -6,7 +6,7 @@ import time
 st.set_page_config(page_title="Moniotring", layout="wide")
 container_login = st.empty()
 				
-def run():
+def run1():
     with container_login.container():
         st.markdown(""" <style>.font {font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} </style> """, unsafe_allow_html=True)
         
