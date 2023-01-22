@@ -1,3 +1,4 @@
+import Triggers.Run_Prep_to_Samples
 import streamlit as st
 from firebase import firebase
 from matplotlib import pyplot as plt
@@ -167,13 +168,12 @@ def run_1(kode):
                     on = st.button("ON", key = '1')   
                     if on:
                         myDB.put('Data', "Data_ON_OFF", 1)
-                        st.stop
+
                         
                 with col6:
                     off = st.button("OFF", key = '2')   
                     if off:
                         myDB.put('Data', "Data_ON_OFF", 0)
-                        st.stop
                         
                 with col7:
                     placeholder_button_info = st.empty()                        
