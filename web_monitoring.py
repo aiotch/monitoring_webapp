@@ -38,7 +38,7 @@ def run_1(kode):
             #st.write('<p class="font">Monitoring</p>', unsafe_allow_html=True)
             st.title('Monitoring')
 
-            myDB = firebase.FirebaseApplication("https://monitoring-b94b2-default-rtdb.asia-southeast1.firebasedatabase.app/", None)
+            myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
             
             placeholderinfo = st.empty()
             placeholderinfo.empty()
@@ -134,7 +134,7 @@ def run_1(kode):
             st.markdown('<p class="font">PT. MARABUNTA BERKARYA CEPERINDO</p>', unsafe_allow_html=True)
             #st.write('<p class="font">Monitoring</p>', unsafe_allow_html=True)
             st.title('Monitoring')
-            myDB = firebase.FirebaseApplication("https://monitoring-b94b2-default-rtdb.asia-southeast1.firebasedatabase.app/", None)
+            myDB = firebase.FirebaseApplication("https://monitoring-system-e57cd-default-rtdb.firebaseio.com/", None)
             
             placeholderinfo = st.empty()
             placeholder_input = st.empty()
