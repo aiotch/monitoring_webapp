@@ -175,7 +175,7 @@ def run_1(kode):
             
             placeholder = st.empty()
 
-            while true:            
+            while True:            
                 if on:
                     myDB.put('Data', "Data_ON_OFF", 1)            
                     st.experimental_rerun() 
