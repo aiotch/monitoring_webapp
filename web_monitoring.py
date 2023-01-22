@@ -175,14 +175,17 @@ def run_1(kode):
             
             placeholder = st.empty()
             run = 1
-            while run == 1:        
+            
+            while run != 0:            
                 if on:
                     myDB.put('Data', "Data_ON_OFF", 1)            
                     run = 0
+                    st.experimental_rerun() 
                     
                 if off:
                     myDB.put('Data', "Data_ON_OFF", 0)
                     run = 0
+                    st.experimental_rerun() 
                     
                 get_Data_ON_OFF = myDB.get('Data/Data_ON_OFF', None)
                 with col7:
