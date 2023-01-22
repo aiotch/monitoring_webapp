@@ -165,21 +165,25 @@ def run_1(kode):
                 placeholder_button.empty() 
                 with col5:
                     on = st.button("ON", key = '1')   
-                    if on:
-                        myDB.put('Data', "Data_ON_OFF", 1)
 
-                        
                 with col6:
                     off = st.button("OFF", key = '2')   
-                    if off:
-                        myDB.put('Data', "Data_ON_OFF", 0)
                         
                 with col7:
                     placeholder_button_info = st.empty()                        
             
             
-            placeholder = st.empty() 
-            while True:           
+            placeholder = st.empty()
+            run = 1
+            while run == 1:        
+                if on:
+                    myDB.put('Data', "Data_ON_OFF", 1)            
+                    run = 0
+                    
+                if off:
+                    myDB.put('Data', "Data_ON_OFF", 0)
+                    run = 0
+                    
                 get_Data_ON_OFF = myDB.get('Data/Data_ON_OFF', None)
                 with col7:
                         placeholder_button_info.empty()
